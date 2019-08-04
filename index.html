@@ -122,16 +122,13 @@
 <li>安装：Maven特定的概念，将打包得到的文件复制到仓库中的指定位置</li>
 <li>部署：将WAR包复制到servlet容器的指定目录下，使其可以运行</li>
 </ol>
-<h3 id="Maven的核心概念"><a href="#Maven的核心概念" class="headerlink" title="Maven的核心概念"></a>Maven的核心概念</h3><h4 id="约定的目录结构"><a href="#约定的目录结构" class="headerlink" title="约定的目录结构"></a>约定的目录结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ProjectName                     根目录：工程名</span><br><span class="line">|---src                         src目录：源码</span><br><span class="line">|---|---main                    main目录：存放主程序</span><br><span class="line">|---|---|---java                java目录：存放Java源文件</span><br><span class="line">|---|---|---resources           resources目录：存放框架或其他工具的配置文件</span><br><span class="line">|---|---test                    test目录：存放测试程序</span><br><span class="line">|---|---|---java                </span><br><span class="line">|---|---|---resources           </span><br><span class="line">|---pom.xml                     pom.xml 文件：Maven工程的核心配置文件</span><br></pre></td></tr></table></figure>
+<h3 id="Maven的核心概念"><a href="#Maven的核心概念" class="headerlink" title="Maven的核心概念"></a>Maven的核心概念</h3><h4 id="约定的目录结构"><a href="#约定的目录结构" class="headerlink" title="约定的目录结构"></a>约定的目录结构</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ProjectName                     根目录：工程名</span><br><span class="line">|---src                         src目录：源码</span><br><span class="line">|---|---main                    main目录：存放主程序</span><br><span class="line">|---|---|---java                java目录：存放Java源文件</span><br><span class="line">|---|---|---resources           resources目录：存放框架或其他工具的配置文件</span><br><span class="line">|---|---<span class="built_in">test</span>                    <span class="built_in">test</span>目录：存放测试程序</span><br><span class="line">|---|---|---java                </span><br><span class="line">|---|---|---resources           </span><br><span class="line">|---pom.xml                     pom.xml 文件：Maven工程的核心配置文件</span><br></pre></td></tr></table></figure>
 
 <h4 id="POM"><a href="#POM" class="headerlink" title="POM"></a>POM</h4><ul>
 <li>Project Object Model 项目对象模型，pom.xml 是Maven工程的核心配置文件</li>
 </ul>
 <h4 id="坐标"><a href="#坐标" class="headerlink" title="坐标"></a>坐标</h4><ul>
-<li>使用下面三个向量在仓库中唯一定位一个Maven工程：（Maven仓库也是这样定位）<blockquote>
-<p>groupid：公司或组织域名倒序 + 项目名<br>artifactid：模块名<br>version：版本</p>
-</blockquote>
-</li>
+<li>使用下面三个向量在仓库中唯一定位一个Maven工程：（Maven仓库也是这样定位）<br>groupid：公司或组织域名倒序 + 项目名<br>artifactid：模块名<br>version：版本</li>
 </ul>
 <h4 id="依赖-dependency"><a href="#依赖-dependency" class="headerlink" title="依赖 dependency"></a>依赖 dependency</h4><ul>
 <li><p>Maven解析依赖信息时会去仓库寻找依赖的JAR包，对于自己开发的Maven工程，要想使用依赖，需要先将其加入到本地仓库，方法：在工程pom.xml所在目录下，使用 mvn install 命令  </p>
@@ -175,52 +172,35 @@
 <td align="center">servlet-api.jar</td>
 </tr>
 </tbody></table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  &lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;4.11&lt;/version&gt;</span><br><span class="line">      &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">  &lt;/dependencies&gt;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">- 依赖的传递性：导入某个依赖，它所依赖的父依赖也会跟着传递过来，因此可以传递的依赖不必在每个工程中重复声明，在最底层的工程中依赖一次即可；**注意：非compile范围的依赖不能传递，要想使用就要重复声明**  </span><br><span class="line"></span><br><span class="line">- 依赖的排除：不想导入传递过来的父依赖，可使用下面的语句将其排除，插入在dependency之内</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">  &lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.11&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;<span class="built_in">test</span>&lt;/scope&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
 
-<pre><code>&lt;exclusions&gt;
-  &lt;exclusion&gt;
-    &lt;groupId&gt;&lt;/groupId&gt;
-    &lt;artifactId&gt;&lt;/artifactId&gt;
-  &lt;/exclusion&gt;
-&lt;/exclusions&gt;</code></pre><pre><code>
-- 统一管理依赖的版本：使用`&lt;properties&gt;&lt;/properties&gt;`标签配合自定义标签
+<ul>
+<li><p>依赖的传递性：导入某个依赖，它所依赖的父依赖也会跟着传递过来，因此可以传递的依赖不必在每个工程中重复声明，在最底层的工程中依赖一次即可；<strong>注意：非compile范围的依赖不能传递，要想使用就要重复声明</strong>  </p>
+</li>
+<li><p>依赖的排除：不想导入传递过来的父依赖，可使用下面的语句将其排除，插在dependency之内  </p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;exclusions&gt;</span><br><span class="line">  &lt;exclusion&gt;</span><br><span class="line">    &lt;groupId&gt;&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;&lt;/artifactId&gt;</span><br><span class="line">  &lt;/exclusion&gt;</span><br><span class="line">&lt;/exclusions&gt;</span><br></pre></td></tr></table></figure>
 
-#### 仓库 repository
-
-- 默认本地仓库地址 C:\Users\username\\.m2\repository
-- 本地仓库中没有的，会去远程仓库下载（私服、中央仓库、中央仓库镜像）
-- 仓库中存放的是Maven工程，包括各种插件、第三方框架或工具的JAR包、自己开发的Maven工程
-
-#### 生命周期 lifecycle、插件 plugin
-
-- 生命周期是指各个构建环节的执行顺序  
-- 生命周期各个阶段的具体任务是由插件完成的，各个阶段与插件的目标对应  
-- 不论现在要执行生命周期的哪一个阶段，都是从这个生命周期最初的位置开始执行
-
-#### 继承  
-
-#### 聚合  
-
-
-
-## HOW
-
-### 常用的Maven命令（cmd命令行）  
-注意：执行命令时必须要进入pom.xml所在目录  
-mvn clean：清理  
-mvn compile：编译主程序  
-mvn test-compile：编译测试程序  
-mvn test：执行测试  
-mvn package：打包  
-mvn install：安装  
-mvn site：生成站点
-
-### IDEA使用Maven创建工程
-</code></pre>
+<ul>
+<li>统一管理依赖的版本：使用<code>&lt;properties&gt;&lt;/properties&gt;</code>标签配合自定义标签</li>
+</ul>
+<h4 id="仓库-repository"><a href="#仓库-repository" class="headerlink" title="仓库 repository"></a>仓库 repository</h4><ul>
+<li>默认本地仓库地址 C:\Users\username\.m2\repository</li>
+<li>本地仓库中没有的，会去远程仓库下载（私服、中央仓库、中央仓库镜像）</li>
+<li>仓库中存放的是Maven工程，包括各种插件、第三方框架或工具的JAR包、自己开发的Maven工程</li>
+</ul>
+<h4 id="生命周期-lifecycle、插件-plugin"><a href="#生命周期-lifecycle、插件-plugin" class="headerlink" title="生命周期 lifecycle、插件 plugin"></a>生命周期 lifecycle、插件 plugin</h4><ul>
+<li>生命周期是指各个构建环节的执行顺序  </li>
+<li>生命周期各个阶段的具体任务是由插件完成的，各个阶段与插件的目标对应  </li>
+<li>不论现在要执行生命周期的哪一个阶段，都是从这个生命周期最初的位置开始执行</li>
+</ul>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><h4 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h4><h2 id="HOW"><a href="#HOW" class="headerlink" title="HOW"></a>HOW</h2><h3 id="常用的Maven命令（cmd命令行）"><a href="#常用的Maven命令（cmd命令行）" class="headerlink" title="常用的Maven命令（cmd命令行）"></a>常用的Maven命令（cmd命令行）</h3><p>注意：执行命令时必须要进入pom.xml所在目录<br>mvn clean：清理<br>mvn compile：编译主程序<br>mvn test-compile：编译测试程序<br>mvn test：执行测试<br>mvn package：打包<br>mvn install：安装<br>mvn site：生成站点</p>
+<h3 id="IDEA使用Maven创建工程"><a href="#IDEA使用Maven创建工程" class="headerlink" title="IDEA使用Maven创建工程"></a>IDEA使用Maven创建工程</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/04/Maven基本概念和操作/" data-id="cjyx2avxe000018v0slsivtfb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/04/Maven基本概念和操作/" data-id="cjyx34aqr000154v0bkt3mxjt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
@@ -271,7 +251,7 @@ mvn site：生成站点
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/31/hello-world/" data-id="cjyx2avxw000718v0ot44ecvo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/31/hello-world/" data-id="cjyx34aqa000054v0npk2x91v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -342,7 +322,7 @@ mvn site：生成站点
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/31/基于hexo搭建个人博客并利用Github部署到远端/" data-id="cjyx2avxy000818v0in0cmxmo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/31/基于hexo搭建个人博客并利用Github部署到远端/" data-id="cjyx34aqx000254v0inz92p90" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
