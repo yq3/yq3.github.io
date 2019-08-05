@@ -7,22 +7,22 @@
   
   <title>Maven基本概念和操作 | YQ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在学Java，找来一个开源项目练手，它是用 Spring Boot 搭建的框架，于是去学 Spring Boot，然而 Spring Boot 需要有 Spring 框架和 Maven 的使用经验，于是就来学 Maven 并作了一点笔记，预计过段时间会学习并整理 Spring 框架的笔记">
+  <meta name="description" content="最近在学Java，找来一个开源项目练手，它是用 Spring Boot 搭建的框架，于是去学 Spring Boot，然而 Spring Boot 需要有 Spring 框架和 Maven 的使用经验，于是就来学 Maven 并作了一点笔记，预计过段时间会学习并整理 Spring 框架的笔记    WHY之前看过别人说，学一样东西，首先要知道为什么要用这个东西，在没有这个东西之前，行业是怎样运转工">
 <meta name="keywords" content="Maven,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven基本概念和操作">
 <meta property="og:url" content="http://yoursite.com/2019/08/05/Maven基本概念和操作/index.html">
 <meta property="og:site_name" content="YQ">
-<meta property="og:description" content="最近在学Java，找来一个开源项目练手，它是用 Spring Boot 搭建的框架，于是去学 Spring Boot，然而 Spring Boot 需要有 Spring 框架和 Maven 的使用经验，于是就来学 Maven 并作了一点笔记，预计过段时间会学习并整理 Spring 框架的笔记">
+<meta property="og:description" content="最近在学Java，找来一个开源项目练手，它是用 Spring Boot 搭建的框架，于是去学 Spring Boot，然而 Spring Boot 需要有 Spring 框架和 Maven 的使用经验，于是就来学 Maven 并作了一点笔记，预计过段时间会学习并整理 Spring 框架的笔记    WHY之前看过别人说，学一样东西，首先要知道为什么要用这个东西，在没有这个东西之前，行业是怎样运转工">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/08/05/Maven基本概念和操作/2019080501.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/05/Maven基本概念和操作/2019080502.PNG">
 <meta property="og:image" content="http://yoursite.com/2019/08/05/Maven基本概念和操作/2019080503.PNG">
 <meta property="og:image" content="http://yoursite.com/2019/08/05/Maven基本概念和操作/2019080504.png">
-<meta property="og:updated_time" content="2019-08-05T12:35:13.083Z">
+<meta property="og:updated_time" content="2019-08-05T13:37:26.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven基本概念和操作">
-<meta name="twitter:description" content="最近在学Java，找来一个开源项目练手，它是用 Spring Boot 搭建的框架，于是去学 Spring Boot，然而 Spring Boot 需要有 Spring 框架和 Maven 的使用经验，于是就来学 Maven 并作了一点笔记，预计过段时间会学习并整理 Spring 框架的笔记">
+<meta name="twitter:description" content="最近在学Java，找来一个开源项目练手，它是用 Spring Boot 搭建的框架，于是去学 Spring Boot，然而 Spring Boot 需要有 Spring 框架和 Maven 的使用经验，于是就来学 Maven 并作了一点笔记，预计过段时间会学习并整理 Spring 框架的笔记    WHY之前看过别人说，学一样东西，首先要知道为什么要用这个东西，在没有这个东西之前，行业是怎样运转工">
 <meta name="twitter:image" content="http://yoursite.com/2019/08/05/Maven基本概念和操作/2019080501.png">
   
     <link rel="alternate" href="/atom.xml" title="YQ" type="application/atom+xml">
@@ -102,8 +102,9 @@
       
         <p>最近在学Java，找来一个开源项目练手，它是用 Spring Boot 搭建的框架，于是去学 Spring Boot，然而 Spring Boot 需要有 Spring 框架和 Maven 的使用经验，于是就来学 Maven 并作了一点笔记，预计过段时间会学习并整理 Spring 框架的笔记  </p>
 <hr>
+<h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><p>之前看过别人说，学一样东西，首先要知道为什么要用这个东西，在没有这个东西之前，行业是怎样运转工作的，而这个东西的出现解决了哪些痛点，有什么优势，这样才能深入理解学习  </p>
 <a id="more"></a>
-<h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><ul>
+<ul>
 <li>借助于Maven可以将一个项目拆分成多个工程，便于管理、分工</li>
 <li>借助于Maven可以将jar包仅仅保存在仓库中，有需要使用的工程引用这个文件接口，不再需要真的把jar包复制过来</li>
 <li>借助于Maven可以以一种规范的方式下载jar包，因为所有知名框架或第三方工具的jar包都按照统一规范存放在了Maven的中央仓库，不再需要自己一个个去寻找下载</li>
@@ -237,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/Maven基本概念和操作/" data-id="cjyyc91zh0000xsv0st1ulz9s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/Maven基本概念和操作/" data-id="cjyyfwmwv00000ov024amuhl7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
