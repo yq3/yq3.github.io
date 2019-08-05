@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/05/Maven基本概念和操作/2019080502.PNG">
 <meta property="og:image" content="http://yoursite.com/2019/08/05/Maven基本概念和操作/2019080503.PNG">
 <meta property="og:image" content="http://yoursite.com/2019/08/05/Maven基本概念和操作/2019080504.png">
-<meta property="og:updated_time" content="2019-08-05T05:22:04.469Z">
+<meta property="og:updated_time" content="2019-08-05T12:35:13.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven基本概念和操作">
 <meta name="twitter:description" content="最近在学Java，找来一个开源项目练手，它是用 Spring Boot 搭建的框架，于是去学 Spring Boot，然而 Spring Boot 需要有 Spring 框架和 Maven 的使用经验，于是就来学 Maven 并作了一点笔记，预计过段时间会学习并整理 Spring 框架的笔记">
@@ -115,8 +115,10 @@
 </li>
 <li><p>构建的概念：以java源文件、框架配置文件、JSP、HTML、图片等资源为原材料，去生产一个可以运行的项目的过程，包括编译、部署、搭建  </p>
 </li>
-<li>编译：Java源文件 → 编译 → Class字节码文件 → 交给JVM去执行  </li>
-<li>部署：项目最终运行的并不是web工程本身，而是这个web工程编译的结果，部署就是将编译结果拿到服务器上的指定目录下的过程，动态web工程 → 编译、部署 → 编译结果  </li>
+<li><p>编译：Java源文件 → 编译 → Class字节码文件 → 交给JVM去执行  </p>
+</li>
+<li><p>部署：项目最终运行的并不是web工程本身，而是这个web工程编译的结果，部署就是将编译结果拿到服务器上的指定目录下的过程，动态web工程 → 编译、部署 → 编译结果  </p>
+</li>
 </ul>
 <ul>
 <li>构建过程中的各个环节：  </li>
@@ -130,7 +132,7 @@
 <li>安装：Maven特定的概念，将打包得到的文件复制到仓库中的指定位置</li>
 <li>部署：将WAR包复制到servlet容器的指定目录下，使其可以运行</li>
 </ol>
-<h3 id="Maven的核心概念"><a href="#Maven的核心概念" class="headerlink" title="Maven的核心概念"></a>Maven的核心概念</h3><h4 id="约定的目录结构"><a href="#约定的目录结构" class="headerlink" title="约定的目录结构"></a>约定的目录结构</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ProjectName                     根目录：工程名</span><br><span class="line">|---src                         src目录：源码</span><br><span class="line">|---|---main                    main目录：存放主程序</span><br><span class="line">|---|---|---java                java目录：存放Java源文件</span><br><span class="line">|---|---|---resources           resources目录：存放框架或其他工具的配置文件</span><br><span class="line">|---|---<span class="built_in">test</span>                    <span class="built_in">test</span>目录：存放测试程序</span><br><span class="line">|---|---|---java                </span><br><span class="line">|---|---|---resources           </span><br><span class="line">|---pom.xml                     pom.xml 文件：Maven工程的核心配置文件</span><br></pre></td></tr></table></figure>
+<h3 id="Maven的核心概念"><a href="#Maven的核心概念" class="headerlink" title="Maven的核心概念"></a>Maven的核心概念</h3><h4 id="约定的目录结构"><a href="#约定的目录结构" class="headerlink" title="约定的目录结构"></a>约定的目录结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ProjectName                     根目录：工程名</span><br><span class="line">|---src                         src目录：源码</span><br><span class="line">|---|---main                    main目录：存放主程序</span><br><span class="line">|---|---|---java                java目录：存放Java源文件</span><br><span class="line">|---|---|---resources           resources目录：存放框架或其他工具的配置文件</span><br><span class="line">|---|---test                    test目录：存放测试程序</span><br><span class="line">|---|---|---java                </span><br><span class="line">|---|---|---resources           </span><br><span class="line">|---pom.xml                     pom.xml 文件：Maven工程的核心配置文件</span><br></pre></td></tr></table></figure>
 <h4 id="POM"><a href="#POM" class="headerlink" title="POM"></a>POM</h4><ul>
 <li>Project Object Model 项目对象模型，pom.xml 是Maven工程的核心配置文件</li>
 </ul>
@@ -235,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/Maven基本概念和操作/" data-id="cjyxy4dwi000120v0jf2lc5fp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/Maven基本概念和操作/" data-id="cjyyc91zh0000xsv0st1ulz9s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
