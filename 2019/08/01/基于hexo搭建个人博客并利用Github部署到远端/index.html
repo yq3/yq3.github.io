@@ -7,18 +7,18 @@
   
   <title>基于hexo搭建个人博客并利用Github部署到远端 | YQ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本方法来自于B站up主CodeSheep的视频av44544186，我仅在此做一个笔记以便日后回顾    准备工作 安装 Git按默认选项安装即可，安装完成后还需最后一步设置，在开始菜单栏找到并打开Git Bash，跳出类似命令行窗口，输入以下命令，其中双引号内是在Github的用户名和邮箱（没有的话需要先注册）：    12$ git config --global user.name &quot;you">
+  <meta name="description" content="本方法来自于B站up主CodeSheep的视频av44544186，我仅在此做一个笔记以便日后回顾    准备工作 安装 Git按默认选项安装即可，安装完成后还需最后一步设置，在开始菜单栏找到并打开Git Bash，跳出类似命令行窗口，输入以下命令，其中双引号内是在Github的用户名和邮箱（没有的话需要先注册）：">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于hexo搭建个人博客并利用Github部署到远端">
 <meta property="og:url" content="http://yoursite.com/2019/08/01/基于hexo搭建个人博客并利用Github部署到远端/index.html">
 <meta property="og:site_name" content="YQ">
-<meta property="og:description" content="本方法来自于B站up主CodeSheep的视频av44544186，我仅在此做一个笔记以便日后回顾    准备工作 安装 Git按默认选项安装即可，安装完成后还需最后一步设置，在开始菜单栏找到并打开Git Bash，跳出类似命令行窗口，输入以下命令，其中双引号内是在Github的用户名和邮箱（没有的话需要先注册）：    12$ git config --global user.name &quot;you">
+<meta property="og:description" content="本方法来自于B站up主CodeSheep的视频av44544186，我仅在此做一个笔记以便日后回顾    准备工作 安装 Git按默认选项安装即可，安装完成后还需最后一步设置，在开始菜单栏找到并打开Git Bash，跳出类似命令行窗口，输入以下命令，其中双引号内是在Github的用户名和邮箱（没有的话需要先注册）：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-05T00:38:12.172Z">
+<meta property="og:updated_time" content="2019-08-13T10:51:57.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于hexo搭建个人博客并利用Github部署到远端">
-<meta name="twitter:description" content="本方法来自于B站up主CodeSheep的视频av44544186，我仅在此做一个笔记以便日后回顾    准备工作 安装 Git按默认选项安装即可，安装完成后还需最后一步设置，在开始菜单栏找到并打开Git Bash，跳出类似命令行窗口，输入以下命令，其中双引号内是在Github的用户名和邮箱（没有的话需要先注册）：    12$ git config --global user.name &quot;you">
+<meta name="twitter:description" content="本方法来自于B站up主CodeSheep的视频av44544186，我仅在此做一个笔记以便日后回顾    准备工作 安装 Git按默认选项安装即可，安装完成后还需最后一步设置，在开始菜单栏找到并打开Git Bash，跳出类似命令行窗口，输入以下命令，其中双引号内是在Github的用户名和邮箱（没有的话需要先注册）：">
   
     <link rel="alternate" href="/atom.xml" title="YQ" type="application/atom+xml">
   
@@ -98,8 +98,9 @@
         <p>本方法来自于B站up主CodeSheep的视频<a href="https://www.bilibili.com/video/av44544186" target="_blank" rel="noopener">av44544186</a>，我仅在此做一个笔记以便日后回顾  </p>
 <hr>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>安装 <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a><br>按默认选项安装即可，安装完成后还需最后一步设置，在开始菜单栏找到并打开Git Bash，跳出类似命令行窗口，输入以下命令，其中双引号内是在Github的用户名和邮箱（没有的话需要先注册）：  </li>
+<li>安装 <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a><br>按默认选项安装即可，安装完成后还需最后一步设置，在开始菜单栏找到并打开Git Bash，跳出类似命令行窗口，输入以下命令，其中双引号内是在Github的用户名和邮箱（没有的话需要先注册）：</li>
 </ul>
+<a id="more"></a>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"your name"</span>  </span><br><span class="line">$ git config --global user.email <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>安装 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js</a><br>按默认选项安装即可  </li>
@@ -123,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/基于hexo搭建个人博客并利用Github部署到远端/" data-id="cjyyfwmx500040ov0lcpz5wjy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/基于hexo搭建个人博客并利用Github部署到远端/" data-id="cjz6lr9tv0001h0v074u729zu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -182,7 +183,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a>
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a>
     </div>
   </div>
 
@@ -202,6 +203,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/08/11/Java学习笔记/">Java学习笔记</a>
+          </li>
         
           <li>
             <a href="/2019/08/05/Maven基本概念和操作/">Maven基本概念和操作</a>
