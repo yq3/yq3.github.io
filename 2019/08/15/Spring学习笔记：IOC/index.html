@@ -17,7 +17,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/08/15/Spring学习笔记：IOC/traditional.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/15/Spring学习笔记：IOC/ioc.png">
-<meta property="og:updated_time" content="2019-08-15T14:54:01.332Z">
+<meta property="og:updated_time" content="2019-08-16T05:29:40.031Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring学习笔记：IOC">
 <meta name="twitter:description" content="Spring是一个开源框架，是一个IOC和AOP容器框架    IOC：Inversion of Control 控制反转   DI：Dependency Injection 依赖注入    主要参考资料：Inversion of Control Containers and the Dependency Injection pattern by Martin Fowler 导论Martin Fo">
@@ -135,12 +135,12 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Main.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        HelloWorld helloWorld = <span class="keyword">new</span> HelloWorld();</span><br><span class="line">        helloWorld.setName(<span class="string">"YQ"</span>);</span><br><span class="line">        helloWorld.hello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>引入Spring之后，在方法main中创建对象以及赋值都可以交给Spring来完成，在Spring Bean的配置文件spring-config.xml中，配置好类名class、对象名id、参数名name、参数值value，然后在main方法中利用IOC容器创建对象、获取赋值，并调用方法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//spring-config.xml</span></span><br><span class="line">&lt;beans&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置bean --&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"helloWorld"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.yq.abc.HelloWorld"</span>&gt;</span><br><span class="line">        &lt;property name="name" value="YQ"&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Main.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建spring的IOC容器对象</span></span><br><span class="line">        ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"spring-config.xml"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//从IOC容器中获取bean实例</span></span><br><span class="line">        HelloWorld helloWorld = (HelloWorld) ctx.getBean(<span class="string">"helloWorld"</span>);</span><br><span class="line"></span><br><span class="line">        helloWorld.hello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Main.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建spring的IOC容器对象，对IOC容器实例化</span></span><br><span class="line">        ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"spring-config.xml"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//从IOC容器中获取bean实例，利用id定位到IOC容器中的bean</span></span><br><span class="line">        HelloWorld helloWorld = (HelloWorld) ctx.getBean(<span class="string">"helloWorld"</span>);</span><br><span class="line"></span><br><span class="line">        helloWorld.hello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/15/Spring学习笔记：IOC/" data-id="cjzct3h410001m4v0u2mjt5zv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/15/Spring学习笔记：IOC/" data-id="cjzijxlif0009rcv03cwjb04x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
@@ -150,6 +150,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/08/19/Spring学习笔记：Bean的配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Spring学习笔记：Bean的配置
+        
+      </div>
+    </a>
   
   
     <a href="/2019/08/13/Java学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
@@ -190,7 +199,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a>
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Spring/" style="font-size: 15px;">Spring</a>
     </div>
   </div>
 
@@ -212,6 +221,10 @@
       <ul>
         
           <li>
+            <a href="/2019/08/19/Spring学习笔记：Bean的配置/">Spring学习笔记：Bean的配置</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/15/Spring学习笔记：IOC/">Spring学习笔记：IOC</a>
           </li>
         
@@ -225,10 +238,6 @@
         
           <li>
             <a href="/2019/08/01/基于hexo搭建个人博客并利用Github部署到远端/">基于hexo搭建个人博客并利用Github部署到远端</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/31/hello-world/">Hello World</a>
           </li>
         
       </ul>
