@@ -8,7 +8,7 @@
   <title>Maven基本概念和操作 | YQ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近在学Java，找来一个开源项目练手，它是用 Spring Boot 搭建的框架，于是去学 Spring Boot，然而 Spring Boot 需要有 Spring 框架和 Maven 的使用经验，于是就来学 Maven 并作了一点笔记，预计过段时间会学习并整理 Spring 框架的笔记    1 WHY之前看过别人说，学一样东西，首先要知道为什么要用这个东西，在没有这个东西之前，行业是怎样运">
-<meta name="keywords" content="Maven,Java">
+<meta name="keywords" content="Java,Maven">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven基本概念和操作">
 <meta property="og:url" content="http://yoursite.com/2019/08/05/Maven基本概念和操作/index.html">
@@ -104,7 +104,6 @@
 <hr>
 <h2 id="1-WHY"><a href="#1-WHY" class="headerlink" title="1 WHY"></a>1 WHY</h2><p>之前看过别人说，学一样东西，首先要知道为什么要用这个东西，在没有这个东西之前，行业是怎样运转工作的，而这个东西的出现解决了哪些痛点，有什么优势，这样才能深入理解学习  </p>
 <a id="more"></a>
-
 <ul>
 <li>借助于Maven可以将一个项目拆分成多个工程，便于管理、分工</li>
 <li>借助于Maven可以将jar包仅仅保存在仓库中，有需要使用的工程引用这个文件接口，不再需要真的把jar包复制过来</li>
@@ -135,7 +134,6 @@
 <li>部署：将WAR包复制到servlet容器的指定目录下，使其可以运行</li>
 </ol>
 <h3 id="2-1-Maven的核心概念"><a href="#2-1-Maven的核心概念" class="headerlink" title="2.1 Maven的核心概念"></a>2.1 Maven的核心概念</h3><h4 id="2-1-1-约定的目录结构"><a href="#2-1-1-约定的目录结构" class="headerlink" title="2.1.1 约定的目录结构"></a>2.1.1 约定的目录结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ProjectName                     根目录：工程名</span><br><span class="line">|---src                         src目录：源码</span><br><span class="line">|---|---main                    main目录：存放主程序</span><br><span class="line">|---|---|---java                java目录：存放Java源文件</span><br><span class="line">|---|---|---resources           resources目录：存放框架或其他工具的配置文件</span><br><span class="line">|---|---test                    test目录：存放测试程序</span><br><span class="line">|---|---|---java                </span><br><span class="line">|---|---|---resources           </span><br><span class="line">|---pom.xml                     pom.xml 文件：Maven工程的核心配置文件</span><br></pre></td></tr></table></figure>
-
 <h4 id="2-1-2-POM"><a href="#2-1-2-POM" class="headerlink" title="2.1.2 POM"></a>2.1.2 POM</h4><ul>
 <li>Project Object Model 项目对象模型，pom.xml 是Maven工程的核心配置文件</li>
 </ul>
@@ -151,41 +149,42 @@
 <table>
 <thead>
 <tr>
-<th align="center">依赖范围 scope</th>
-<th align="center">对主程序是否有效</th>
-<th align="center">对测试程序是否有效</th>
-<th align="center">是否参与打包</th>
-<th align="center">是否参与部署</th>
-<th align="center">典型例子</th>
+<th style="text-align:center">依赖范围 scope</th>
+<th style="text-align:center">对主程序是否有效</th>
+<th style="text-align:center">对测试程序是否有效</th>
+<th style="text-align:center">是否参与打包</th>
+<th style="text-align:center">是否参与部署</th>
+<th style="text-align:center">典型例子</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">compile</td>
-<td align="center">有效</td>
-<td align="center">有效</td>
-<td align="center">参与</td>
-<td align="center">参与</td>
-<td align="center">spring-core</td>
+<tbody>
+<tr>
+<td style="text-align:center">compile</td>
+<td style="text-align:center">有效</td>
+<td style="text-align:center">有效</td>
+<td style="text-align:center">参与</td>
+<td style="text-align:center">参与</td>
+<td style="text-align:center">spring-core</td>
 </tr>
 <tr>
-<td align="center">test</td>
-<td align="center">无效</td>
-<td align="center">有效</td>
-<td align="center">不参与</td>
-<td align="center">不参与</td>
-<td align="center">junit</td>
+<td style="text-align:center">test</td>
+<td style="text-align:center">无效</td>
+<td style="text-align:center">有效</td>
+<td style="text-align:center">不参与</td>
+<td style="text-align:center">不参与</td>
+<td style="text-align:center">junit</td>
 </tr>
 <tr>
-<td align="center">provided</td>
-<td align="center">有效</td>
-<td align="center">有效</td>
-<td align="center">不参与</td>
-<td align="center">不参与</td>
-<td align="center">servlet-api.jar</td>
+<td style="text-align:center">provided</td>
+<td style="text-align:center">有效</td>
+<td style="text-align:center">有效</td>
+<td style="text-align:center">不参与</td>
+<td style="text-align:center">不参与</td>
+<td style="text-align:center">servlet-api.jar</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><p>依赖的传递性：导入某个依赖，它所依赖的父依赖也会跟着传递过来，因此可以传递的依赖不必在每个工程中重复声明，在最底层的工程中依赖一次即可；<strong>注意：非compile范围的依赖不能传递，要想使用就要重复声明</strong>  </p>
 </li>
@@ -193,7 +192,6 @@
 </li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span><span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span><span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>统一管理依赖的版本：使用 <code>&lt;properties&gt;&lt;/properties&gt;</code> 标签配合自定义标签</li>
 </ul>
@@ -219,33 +217,28 @@
 <li>注意：执行命令时必须要进入pom.xml所在目录  </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mvn clean：清理  </span><br><span class="line">mvn compile：编译主程序  </span><br><span class="line">mvn test-compile：编译测试程序  </span><br><span class="line">mvn test：执行测试  </span><br><span class="line">mvn package：打包  </span><br><span class="line">mvn install：安装  </span><br><span class="line">mvn site：生成站点</span><br></pre></td></tr></table></figure>
-
 <h3 id="3-2-Maven-在-IntelliJ-IDEA-中的使用"><a href="#3-2-Maven-在-IntelliJ-IDEA-中的使用" class="headerlink" title="3.2 Maven 在 IntelliJ IDEA 中的使用"></a>3.2 Maven 在 IntelliJ IDEA 中的使用</h3><p>这部分要是详细写能写单独一篇，很多细致的操作我还没用到也还没学，在此先记录一下用Maven创建web工程的初始步骤，虽然看上去简单，但对于我一个新手，还是摸索了好久  </p>
 <ol>
 <li>新建一个工程</li>
 </ol>
 <img src="/2019/08/05/Maven基本概念和操作/2019080501.png" title="This is an example image">
-
 <ol start="2">
 <li>选择Maven，勾选create from archetype，选择maven-archetype-webapp</li>
 </ol>
 <img src="/2019/08/05/Maven基本概念和操作/2019080502.PNG" title="This is an example image">
-
 <ol start="3">
 <li>输入groupid和artifactid，然后next-next-finish</li>
 </ol>
 <img src="/2019/08/05/Maven基本概念和操作/2019080503.PNG" title="This is an example image">
-
 <ol start="4">
 <li>BUILD SUCCESS之后，开始配置Tomcat：点击右上角Add configuration，在弹出窗口中点击左上角的“+”号，选择Tomcat server - local，填写Name，Application server，open browser，看到下方Warning后点击Warning右侧的Fix，选择war exploded，最后点OK，则Tomcat配置完毕</li>
 </ol>
 <img src="/2019/08/05/Maven基本概念和操作/2019080504.png" title="This is an example image">
 
-
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/Maven基本概念和操作/" data-id="cjzwnm7r20001k4v07per9wtk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/Maven基本概念和操作/" data-id="cjzwppwvj0004ksv0tt8toikk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
@@ -266,9 +259,9 @@
     </a>
   
   
-    <a href="/2019/08/01/基于hexo搭建个人博客并利用Github部署到远端/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/07/21/跟着Kaggle学习Machine Learning/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">基于hexo搭建个人博客并利用Github部署到远端</div>
+      <div class="article-nav-title">跟着Kaggle学习Machine Learning</div>
     </a>
   
 </nav>
@@ -294,7 +287,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter/">Jupyter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/">Kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pandas/">Pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter/">Jupyter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/">Kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pandas/">Pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
     </div>
   </div>
 
@@ -304,7 +297,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jupyter/" style="font-size: 10px;">Jupyter</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Pandas/" style="font-size: 10px;">Pandas</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Spring/" style="font-size: 16.67px;">Spring</a>
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jupyter/" style="font-size: 10px;">Jupyter</a> <a href="/tags/Kaggle/" style="font-size: 13.33px;">Kaggle</a> <a href="/tags/Machine-Learning/" style="font-size: 10px;">Machine Learning</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Pandas/" style="font-size: 10px;">Pandas</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/Spring/" style="font-size: 16.67px;">Spring</a>
     </div>
   </div>
 
@@ -330,10 +323,6 @@
           </li>
         
           <li>
-            <a href="/2019/08/21/跟着Kaggle学习Machine Learning/">跟着Kaggle学习Machine Learning</a>
-          </li>
-        
-          <li>
             <a href="/2019/08/19/Spring学习笔记：Bean的配置/">Spring学习笔记：Bean的配置</a>
           </li>
         
@@ -342,7 +331,11 @@
           </li>
         
           <li>
-            <a href="/2019/08/15/跟着Kaggle学习Pandas/">跟着Kaggle学习Pandas</a>
+            <a href="/2019/08/13/Java学习笔记/">Java学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/05/Maven基本概念和操作/">Maven基本概念和操作</a>
           </li>
         
       </ul>
