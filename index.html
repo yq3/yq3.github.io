@@ -66,6 +66,119 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Spring学习笔记：AOP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/21/Spring学习笔记：AOP/" class="article-date">
+  <time datetime="2019-08-20T16:00:00.000Z" itemprop="datePublished">2019-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/21/Spring学习笔记：AOP/">Spring学习笔记：AOP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>AOP：Aspect Oriented Programming 面向切面编程</p>
+<p>主要参考资料：维基百科-AOP</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/08/21/Spring学习笔记：AOP/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/21/Spring学习笔记：AOP/" data-id="cjzwnm7r60004k4v0nn6uxxwy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-跟着Kaggle学习Machine Learning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/21/跟着Kaggle学习Machine Learning/" class="article-date">
+  <time datetime="2019-08-20T16:00:00.000Z" itemprop="datePublished">2019-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/21/跟着Kaggle学习Machine Learning/">跟着Kaggle学习Machine Learning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="熟悉数据"><a href="#熟悉数据" class="headerlink" title="熟悉数据"></a>熟悉数据</h1><h2 id="了解概况"><a href="#了解概况" class="headerlink" title="了解概况"></a>了解概况</h2><p>可以通过DataFrame.describe()或者DataFrame.columns等指令来了解概况  </p>
+<h2 id="处理缺失数据"><a href="#处理缺失数据" class="headerlink" title="处理缺失数据"></a>处理缺失数据</h2><h3 id="直接删除"><a href="#直接删除" class="headerlink" title="直接删除"></a>直接删除</h3><p>例如DataFrame = DataFrame.dropna()，这并不是最好的办法，但对于某一缺失大多数值的特征，可能很有用</p>
+<h3 id="估算"><a href="#估算" class="headerlink" title="估算"></a>估算</h3><p>用数字（通常为平均值）填充缺失的数据，大多数情况下，估算值并不完全正确，但它通常比完全删除更好</p>
+<h3 id="one-hot-encoding"><a href="#one-hot-encoding" class="headerlink" title="one-hot encoding"></a>one-hot encoding</h3><p>分类数据是指仅采用有限数值（比如汽车种类，客舱等级）的数据类型，对于这类数据，采用one-hot encoding方法，这部分不懂</p>
+<h2 id="选择训练集和预测目标"><a href="#选择训练集和预测目标" class="headerlink" title="选择训练集和预测目标"></a>选择训练集和预测目标</h2><h1 id="构建模型"><a href="#构建模型" class="headerlink" title="构建模型"></a>构建模型</h1><h2 id="选择合适的机器学习模型"><a href="#选择合适的机器学习模型" class="headerlink" title="选择合适的机器学习模型"></a>选择合适的机器学习模型</h2><h2 id="用训练集及其对应的目标值训练模型"><a href="#用训练集及其对应的目标值训练模型" class="headerlink" title="用训练集及其对应的目标值训练模型"></a>用训练集及其对应的目标值训练模型</h2><h2 id="用训练好的模型预测新数据"><a href="#用训练好的模型预测新数据" class="headerlink" title="用训练好的模型预测新数据"></a>用训练好的模型预测新数据</h2><p>如果没有新数据，可以将训练集划分为两部分，使其中一部分作为新数据</p>
+<h1 id="模型验证-Model-Validation"><a href="#模型验证-Model-Validation" class="headerlink" title="模型验证 Model Validation"></a>模型验证 Model Validation</h1><p>多数情况下，模型质量是用预测准确度来衡量的  </p>
+<p>如果模型对于数据集来说过于复杂，捕捉到了所有特征，虽然对于训练集几乎完美匹配，但是在验证新数据时表现不佳，这种现象称为过拟合（overfitting）<br>而如果模型过于简单、拟合能力不够，没有捕捉到关键特征，不仅预测新数据不准确，对于训练集也不匹配，这种现象称为欠拟合（underfitting）<br>通常我们更关注新数据的准确度，下图中红色验证曲线的最低点就是过拟合与欠拟合之间的最佳拟合点<br><img src="http://i.imgur.com/2q85n9s.png" alt="bestfitting"><br>例如，对于决策树模型DecisionTreeRegressor，可以通过尝试赋予参数max_leaf_nodes不同数值来寻找最佳拟合点<br>相比而言，随机森林模型RandomForestRegressor使用很多树，通过平均每个树的预测来进行预测，通常比单个决策树具有更好地预测准确度，并且使用默认参数时效果更好  </p>
+<p>关于XGBoost：  </p>
+<ul>
+<li>Kaggle里面经常用，特别适合处理表格数据类型（区别于图片视频等）</li>
+<li>主要思想：通过基础预测构建初始模型，然后构建一个新模型来预测，并添加到模型集合中，计算新错误，构建下一个模型，如此循环</li>
+<li>参数n_estimators：指完成上述建模周期的次数，过多可能过拟合，过少可能欠拟合</li>
+<li>参数early_stopping_rounds：可以为n_estimators设置一个高值，然后用early_stopping_rounds通过迭代寻找最佳值  </li>
+</ul>
+<p>关于sklearn.pipeline：先占位 没看懂  </p>
+<p>关于交叉验证Cross Validation：  </p>
+<ul>
+<li>划分训练集与测试集的工具train_test_split的缺点：测试集越大，对模型的预测质量越高，但较小的训练集则意味着更糟糕的模型  </li>
+<li>交叉验证在不同的数据子集上运行建模过程，以获得多个模型质量度量，例如我们将数据平均分为5个部分，做5次建模过程，第一次将第一个20%的数据作为测试集，其余80%作为训练集，以此类推，我们就得到了基于所有数据的模型质量度量<br><img src="https://i.stack.imgur.com/1fXzJ.png" alt="Cross Validation">  </li>
+</ul>
+<ul>
+<li>交叉验证与train_test_split的取舍：交叉验证可以更准确地衡量模型质量，但需要更长的运行时间，如果数据集较小，那用交叉验证很合适，如果数据集较大，那么简单的直接分割就足够了；或者，可以运行交叉验证查看每个模型的分数是否接近，如果结果相同，那么直接划分就足够了</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/21/跟着Kaggle学习Machine Learning/" data-id="cjzwnm7rc000ak4v0ptync937" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Spring学习笔记：Bean的配置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/19/Spring学习笔记：Bean的配置/" class="article-date">
@@ -106,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/19/Spring学习笔记：Bean的配置/" data-id="cjzijxlih000brcv0ijh7y29v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/19/Spring学习笔记：Bean的配置/" data-id="cjzwnm7rs0010k4v04if3j0j4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
@@ -159,10 +272,58 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/15/Spring学习笔记：IOC/" data-id="cjzijxlif0009rcv03cwjb04x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/15/Spring学习笔记：IOC/" data-id="cjzwnm7r80005k4v0f1rk1773" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-跟着Kaggle学习Pandas" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/15/跟着Kaggle学习Pandas/" class="article-date">
+  <time datetime="2019-08-14T16:00:00.000Z" itemprop="datePublished">2019-08-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/15/跟着Kaggle学习Pandas/">跟着Kaggle学习Pandas</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我搬我自己：）<a href="https://blog.csdn.net/yq9333/article/details/87954845" target="_blank" rel="noopener">原文链接</a></p>
+<p>Kaggle给初学者们提供了简单的上手教学，在此将其关于Pandas的课程提炼出来，虽然并没有多少内容，但对于做数据分析应该够用了<br>Kaggle原文链接：<a href="https://www.kaggle.com/learn/pandas" target="_blank" rel="noopener">https://www.kaggle.com/learn/pandas</a><br>Pandas官方文档更为详细，举例也很友好：<a href="http://pandas.pydata.org/pandas-docs/stable/reference/index.html" target="_blank" rel="noopener">http://pandas.pydata.org/pandas-docs/stable/reference/index.html</a><br>例子中用到的数据我已在下面链接中分享出来：<br>链接：<a href="https://pan.baidu.com/s/1zalqh7qRPb_L92oKRPPg_Q" target="_blank" rel="noopener">https://pan.baidu.com/s/1zalqh7qRPb_L92oKRPPg_Q</a> 提取码：4198 </p>
+        
+          <p class="article-more-link">
+            <a href="/2019/08/15/跟着Kaggle学习Pandas/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/15/跟着Kaggle学习Pandas/" data-id="cjzwnm7ru0012k4v0xr53tg39" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kaggle/">Kaggle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pandas/">Pandas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </footer>
   </div>
@@ -213,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/13/Java学习笔记/" data-id="cjzijxlip000mrcv03hwt0hl1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/13/Java学习笔记/" data-id="cjzwnm7sb001fk4v0590rtv0f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -262,7 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/Maven基本概念和操作/" data-id="cjzijxlhw0000rcv0m4sg3nv3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/Maven基本概念和操作/" data-id="cjzwnm7r20001k4v07per9wtk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
@@ -313,7 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/基于hexo搭建个人博客并利用Github部署到远端/" data-id="cjzijxlif0008rcv07ync1b86" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/基于hexo搭建个人博客并利用Github部署到远端/" data-id="cjzwnm7r90006k4v0srsskl2q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -325,12 +486,16 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Jupyter简单上手" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/31/hello-world/" class="article-date">
-  <time datetime="2019-07-30T16:19:52.700Z" itemprop="datePublished">2019-07-31</time>
+    <a href="/2019/07/05/Jupyter简单上手/" class="article-date">
+  <time datetime="2019-07-04T16:00:00.000Z" itemprop="datePublished">2019-07-05</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -339,7 +504,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/31/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/07/05/Jupyter简单上手/">Jupyter简单上手</a>
     </h1>
   
 
@@ -347,22 +512,78 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <p>以下所有操作都基于Windows10系统，其他系统未做尝试</p>
+<h2 id="安装与环境变量配置"><a href="#安装与环境变量配置" class="headerlink" title="安装与环境变量配置"></a>安装与环境变量配置</h2><ol>
+<li>在cmd命令行使用pip安装：pip install –user jupyter  </li>
+<li>查找jupyter-notebook.exe文件所在的安装路径，例如：C:\Users\admin\AppData\Roaming\Python\Python37\Scripts  </li>
+<li>将其添加至系统变量中，操作如下：我的电脑-右击属性-高级系统设置-环境变量-系统变量-选中Path-编辑-将路径新建进去保存</li>
+<li>在cmd命令行输入jupyter notebook以启动程序，此时默认浏览器中会弹出Jupyter的界面，地址为localhost:8888，此时cmd的当前操作路径即为Jupyter的工作路径，注意运行期间cmd命令行不要关闭</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2019/07/05/Jupyter简单上手/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/31/hello-world/" data-id="cjzijxlid0007rcv0ez3yzroh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/05/Jupyter简单上手/" data-id="cjzwnm7qx0000k4v0z9ecn6p9" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jupyter/">Jupyter</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Python学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/01/Python学习笔记/" class="article-date">
+  <time datetime="2019-06-30T16:00:00.000Z" itemprop="datePublished">2019-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/01/Python学习笔记/">Python学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我搬我自己：<a href="https://github.com/yq3/Python/blob/master/PythonLearningRecord.md" target="_blank" rel="noopener">原文链接</a></p>
+<p>主要参考资料：Mike Dane’s Giraffe Academy 以及 Eric Matthes’s Python Crash Course</p>
+<h2 id="1-变量的命名和使用"><a href="#1-变量的命名和使用" class="headerlink" title="1 变量的命名和使用"></a>1 变量的命名和使用</h2><ul>
+<li>变量名只能包含字母、数字和下划线，可以字母或下划线打头，但不能以数字打头</li>
+<li>慎用小写字母l和大写字母O，可能会被误认为数字1和0</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2019/07/01/Python学习笔记/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/01/Python学习笔记/" data-id="cjzwnm7rr000zk4v0nh7z9ud6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
     </footer>
   </div>
   
@@ -390,7 +611,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter/">Jupyter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/">Kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pandas/">Pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
     </div>
   </div>
 
@@ -400,7 +621,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Spring/" style="font-size: 15px;">Spring</a>
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jupyter/" style="font-size: 10px;">Jupyter</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Pandas/" style="font-size: 10px;">Pandas</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Spring/" style="font-size: 16.67px;">Spring</a>
     </div>
   </div>
 
@@ -422,6 +643,14 @@
       <ul>
         
           <li>
+            <a href="/2019/08/21/Spring学习笔记：AOP/">Spring学习笔记：AOP</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/21/跟着Kaggle学习Machine Learning/">跟着Kaggle学习Machine Learning</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/19/Spring学习笔记：Bean的配置/">Spring学习笔记：Bean的配置</a>
           </li>
         
@@ -430,15 +659,7 @@
           </li>
         
           <li>
-            <a href="/2019/08/13/Java学习笔记/">Java学习笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/05/Maven基本概念和操作/">Maven基本概念和操作</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/01/基于hexo搭建个人博客并利用Github部署到远端/">基于hexo搭建个人博客并利用Github部署到远端</a>
+            <a href="/2019/08/15/跟着Kaggle学习Pandas/">跟着Kaggle学习Pandas</a>
           </li>
         
       </ul>
