@@ -5,15 +5,20 @@
   
 
   
-  <title>Category: 技术 | YQ</title>
+  <title>机器学习过程中面临的主要问题 | YQ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YQ">
-<meta property="og:url" content="http://yoursite.com/categories/技术/index.html">
+  <meta name="description" content="机器学习过程中面临的主要问题来源于两个方面：数据和算法 关于数据训练数据的数量不足 验证方法：通过训练递增的数据量查看预测准确率是否提升  结果：如果有提升，提升程度有多少，借以决定在优化算法与建设数据库中如何分配工作精力">
+<meta name="keywords" content="Machine Learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习过程中面临的主要问题">
+<meta property="og:url" content="http://yoursite.com/2019/09/01/机器学习过程中面临的主要问题/index.html">
 <meta property="og:site_name" content="YQ">
+<meta property="og:description" content="机器学习过程中面临的主要问题来源于两个方面：数据和算法 关于数据训练数据的数量不足 验证方法：通过训练递增的数据量查看预测准确率是否提升  结果：如果有提升，提升程度有多少，借以决定在优化算法与建设数据库中如何分配工作精力">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-02T04:34:09.121Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YQ">
+<meta name="twitter:title" content="机器学习过程中面临的主要问题">
+<meta name="twitter:description" content="机器学习过程中面临的主要问题来源于两个方面：数据和算法 关于数据训练数据的数量不足 验证方法：通过训练递增的数据量查看预测准确率是否提升  结果：如果有提升，提升程度有多少，借以决定在优化算法与建设数据库中如何分配工作精力">
   
     <link rel="alternate" href="/atom.xml" title="YQ" type="application/atom+xml">
   
@@ -64,216 +69,94 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/09/01/机器学习过程中面临的主要问题/" class="archive-article-date">
-  <time datetime="2019-08-31T16:00:00.000Z" itemprop="datePublished">Sep 1</time>
+        <section id="main"><article id="post-机器学习过程中面临的主要问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/01/机器学习过程中面临的主要问题/" class="article-date">
+  <time datetime="2019-08-31T16:00:00.000Z" itemprop="datePublished">2019-09-01</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/01/机器学习过程中面临的主要问题/">机器学习过程中面临的主要问题</a>
+    <h1 class="article-title" itemprop="name">
+      机器学习过程中面临的主要问题
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/21/Spring学习笔记：AOP/" class="archive-article-date">
-  <time datetime="2019-08-20T16:00:00.000Z" itemprop="datePublished">Aug 21</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/21/Spring学习笔记：AOP/">Spring学习笔记：AOP</a>
-    </h1>
-  
+        <p>机器学习过程中面临的主要问题来源于两个方面：数据和算法</p>
+<h2 id="关于数据"><a href="#关于数据" class="headerlink" title="关于数据"></a>关于数据</h2><h3 id="训练数据的数量不足"><a href="#训练数据的数量不足" class="headerlink" title="训练数据的数量不足"></a>训练数据的数量不足</h3><ul>
+<li><p>验证方法：通过训练递增的数据量查看预测准确率是否提升</p>
+</li>
+<li><p>结果：如果有提升，提升程度有多少，借以决定在优化算法与建设数据库中如何分配工作精力</p>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="训练数据不具代表性"><a href="#训练数据不具代表性" class="headerlink" title="训练数据不具代表性"></a>训练数据不具代表性</h3><ul>
+<li>解决方法：在保证数据量的情况下，避免采样偏差</li>
+</ul>
+<h3 id="数据质量差、有缺失"><a href="#数据质量差、有缺失" class="headerlink" title="数据质量差、有缺失"></a>数据质量差、有缺失</h3><ul>
+<li>解决方法：需要花大量时间清理数据，对于缺失数据，要么舍弃，创建一个不带这个特征的模型，要么补充，创建一个带这个特征的模型，对此可能会衍生出多个模型分别研究</li>
+</ul>
+<h3 id="无关特征"><a href="#无关特征" class="headerlink" title="无关特征"></a>无关特征</h3><ul>
+<li><p>特征工程：提取好的特征集，排除无关特征，这个过程叫做特征过程，很关键</p>
+</li>
+<li><p>特征选择：从现有特征中选择最有用的特征进行训练</p>
+</li>
+<li><p>特征提取：将现有特征进行整合，产生更有用的特征（降维算法）</p>
+</li>
+<li><p>通过收集新数据创造新特征</p>
+</li>
+</ul>
+<h2 id="关于算法"><a href="#关于算法" class="headerlink" title="关于算法"></a>关于算法</h2><h3 id="过度拟合与欠拟合"><a href="#过度拟合与欠拟合" class="headerlink" title="过度拟合与欠拟合"></a>过度拟合与欠拟合</h3><ul>
+<li><p>过度拟合：模型在训练数据上表现良好，但在泛化的时候不尽如人意，一般发生在当模型相对于训练数据的数量和噪度都过于复杂的时候</p>
+</li>
+<li><p>过度拟合的解决方法：简化模型；收集更多的训练数据；减少训练数据中的噪声；正则化也可以降低过拟的风险</p>
+</li>
+<li><p>欠拟合：可能原因是模型过于简单，比如只用线性模型去描述一个复杂问题</p>
+</li>
+<li><p>欠拟合的解决方法：选择一个带有更多参数更强大的模型；提供更好的特征集（特征工程）；减少模型中的约束</p>
+</li>
+</ul>
+<h3 id="模型的选择"><a href="#模型的选择" class="headerlink" title="模型的选择"></a>模型的选择</h3><ul>
+<li>多尝试</li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/19/Spring学习笔记：Bean的配置/" class="archive-article-date">
-  <time datetime="2019-08-18T16:00:00.000Z" itemprop="datePublished">Aug 19</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/19/Spring学习笔记：Bean的配置/">Spring学习笔记：Bean的配置</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/15/Spring学习笔记：IOC/" class="archive-article-date">
-  <time datetime="2019-08-14T16:00:00.000Z" itemprop="datePublished">Aug 15</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/01/机器学习过程中面临的主要问题/" data-id="ck01wtcd90005ykv0orkqnscz" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/15/Spring学习笔记：IOC/">Spring学习笔记：IOC</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/13/Java学习笔记/" class="archive-article-date">
-  <time datetime="2019-08-12T16:00:00.000Z" itemprop="datePublished">Aug 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/13/Java学习笔记/">Java学习笔记</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/21/Spring学习笔记：AOP/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Spring学习笔记：AOP</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/05/Maven基本概念和操作/" class="archive-article-date">
-  <time datetime="2019-08-04T16:00:00.000Z" itemprop="datePublished">Aug 5</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/05/Maven基本概念和操作/">Maven基本概念和操作</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/07/21/跟着Kaggle学习Machine Learning/" class="archive-article-date">
-  <time datetime="2019-07-20T16:00:00.000Z" itemprop="datePublished">Jul 21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/21/跟着Kaggle学习Machine Learning/">跟着Kaggle学习Machine Learning</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/07/15/跟着Kaggle学习Pandas/" class="archive-article-date">
-  <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">Jul 15</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/跟着Kaggle学习Pandas/">跟着Kaggle学习Pandas</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/07/05/Jupyter简单上手/" class="archive-article-date">
-  <time datetime="2019-07-04T16:00:00.000Z" itemprop="datePublished">Jul 5</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/05/Jupyter简单上手/">Jupyter简单上手</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/07/02/Python学习笔记/" class="archive-article-date">
-  <time datetime="2019-07-01T16:00:00.000Z" itemprop="datePublished">Jul 2</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/02/Python学习笔记/">Python学习笔记</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/categories/技术/page/2/">2</a><a class="extend next" rel="next" href="/categories/技术/page/2/">Next &raquo;</a>
-  </nav>
 
 </section>
         
