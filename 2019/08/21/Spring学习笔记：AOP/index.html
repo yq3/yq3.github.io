@@ -100,8 +100,10 @@
 <h2 id="WHY"><a href="#WHY" class="headerlink" title="WHY"></a>WHY</h2><p>设想这样一个应用场景：设计一个计算器，要求在每次程序执行运算前后输出日志，追踪正在发生的活动</p>
 <p>一般方法：在程序执行前和执行后分别重复添加<code>System.out.println();</code>语句，汇报执行进度</p>
 <a id="more"></a>
+
 <p>带来的两个主要问题：一是代码分散，为了满足某个单一需求，需要在各个模块重复添加相同的语句，一旦需要改动，则全部语句需要逐一改动，很麻烦；二是代码混乱，核心业务代码之外混杂了这些日志代码等非业务需求代码，每个模块需要兼顾多个点，维护困难</p>
 <!-- 使用动态代理可以实现AOP的功能，解决上述问题：使用一个代理将对象包装起来，然后用该代理对象取代原始对象，任何对原始对象的调用都要通过代理，代理决定是否以及何时将方法调用转到原始对象上 -->
+
 <p>AOP的好处：每个业务逻辑位于一个位置，代码不分散，便于维护和升级，业务模块更简洁，只包含核心业务代码</p>
 <p>业务逻辑：验证参数—前置日志—核心方法—后置日志</p>
 <p>把每一个部分单独拿出来就叫抽取横切关注点</p>
@@ -128,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/21/Spring学习笔记：AOP/" data-id="ck1n54cz00004ysv01b7u8p9v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/21/Spring学习笔记：AOP/" data-id="ck1nkbfnx0004nsv0ya60isvz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>

@@ -106,7 +106,9 @@
 <p>主要参考资料：<a href="https://www.martinfowler.com/articles/injection.html" target="_blank" rel="noopener">Inversion of Control Containers and the Dependency Injection pattern</a> by Martin Fowler</p>
 <h2 id="导论"><a href="#导论" class="headerlink" title="导论"></a>导论</h2><p>Martin Fowler举了这样一个例子：类A中有个方法a，需要使用接口B中的方法b，如果用传统模式，我们会在类A内实现接口B的一个实例C，然后再使用方法b，此时类A不仅依赖于接口B，还依赖于接口B的具体实现类C  </p>
 <a id="more"></a>
+
 <img src="/2019/08/15/Spring学习笔记：IOC/traditional.png" title="This is an example image">
+
 <p>这样就会带来一个问题：在不同的应用场景中，具体实现方法b是会变化的，那么类A就也要跟着变化，而我们当然希望类A只依赖于接口B，这样就不用在类A内修改方法b，那么要如何获得接口B的具体实现类C呢  </p>
 <p>这时候就要引入插件的概念：接口B的实现类C不是在编译期连入程序中的，而是要在运行期在类A中插入具体实现类C，也就是要使用插件机制来处理服务之间的交互过程，从而在不同的部署方案中使用不同的实现  </p>
 <p>将这些插件组合成一个应用程序，便是轻量级容器（比如Spring）的主要任务，解决手段便是采用控制反转模式</p>
@@ -124,6 +126,8 @@
 </ul>
 <p>依赖注入模式的基本思想：用一个单独的对象（装配器）来获得接口B的一个合适的实现，并将其实例赋给类A，它最大的好处在于：消除了类A对具体实现类C的依赖</p>
 <img src="/2019/08/15/Spring学习笔记：IOC/ioc.png" title="This is an example image">
+
+
 <p><strong>依赖注入的几种形式：</strong></p>
 <ul>
 <li>使用PicoContainer进行构造函数注入</li>
@@ -132,15 +136,19 @@
 </ul>
 <h2 id="应用Spring实现的一个简单案例"><a href="#应用Spring实现的一个简单案例" class="headerlink" title="应用Spring实现的一个简单案例"></a>应用Spring实现的一个简单案例</h2><p>用传统方法写一个hello world程序，我们是直接在方法main里创建一个类HelloWorld的对象helloWorld，然后调用其方法setName()来赋值，最后调用方法hello()输出信息</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HelloWorld.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello:"</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Main.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        HelloWorld helloWorld = <span class="keyword">new</span> HelloWorld();</span><br><span class="line">        helloWorld.setName(<span class="string">"YQ"</span>);</span><br><span class="line">        helloWorld.hello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>引入Spring之后，在方法main中创建对象以及赋值都可以交给Spring来完成，在Spring Bean的配置文件spring-config.xml中，配置好类名class、对象名id、参数名name、参数值value，然后在main方法中利用IOC容器创建对象、获取赋值，并调用方法</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//spring-config.xml</span></span><br><span class="line">&lt;beans&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置bean --&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"helloWorld"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cn.yq.abc.HelloWorld"</span>&gt;</span><br><span class="line">        &lt;property name="name" value="YQ"&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Main.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建spring的IOC容器对象，对IOC容器实例化</span></span><br><span class="line">        ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"spring-config.xml"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//从IOC容器中获取bean实例，利用id定位到IOC容器中的bean</span></span><br><span class="line">        HelloWorld helloWorld = (HelloWorld) ctx.getBean(<span class="string">"helloWorld"</span>);</span><br><span class="line"></span><br><span class="line">        helloWorld.hello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/15/Spring学习笔记：IOC/" data-id="ck1n54cz20005ysv00yvmi48j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/15/Spring学习笔记：IOC/" data-id="ck1nkbfo10005nsv0q9wo9r2k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
