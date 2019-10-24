@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>机器学习和深度学习的通用工作流程 | YQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1 定义问题，收集数据集首先定义所面对的问题：  输入输出：输入数据是什么？需要预测什么？  问题类型：面对的是什么类型的问题？比如二分类、多分类、标量回归、向量回归、等等，确定问题类型有助于选择模型架构、损失函数等   注意这一阶段的工作基于基本假设：">
+<meta name="keywords" content="Machine Learning,Deep Learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习和深度学习的通用工作流程">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/机器学习和深度学习的通用工作流程/index.html">
+<meta property="og:site_name" content="YQ">
+<meta property="og:description" content="1 定义问题，收集数据集首先定义所面对的问题：  输入输出：输入数据是什么？需要预测什么？  问题类型：面对的是什么类型的问题？比如二分类、多分类、标量回归、向量回归、等等，确定问题类型有助于选择模型架构、损失函数等   注意这一阶段的工作基于基本假设：">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-22T15:26:17.304Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习和深度学习的通用工作流程">
+<meta name="twitter:description" content="1 定义问题，收集数据集首先定义所面对的问题：  输入输出：输入数据是什么？需要预测什么？  问题类型：面对的是什么类型的问题？比如二分类、多分类、标量回归、向量回归、等等，确定问题类型有助于选择模型架构、损失函数等   注意这一阶段的工作基于基本假设：">
+  
+    <link rel="alternate" href="/atom.xml" title="YQ" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">YQ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">My Hexo Blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-机器学习和深度学习的通用工作流程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/21/机器学习和深度学习的通用工作流程/" class="article-date">
+  <time datetime="2019-10-20T16:00:00.000Z" itemprop="datePublished">2019-10-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      机器学习和深度学习的通用工作流程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-定义问题，收集数据集"><a href="#1-定义问题，收集数据集" class="headerlink" title="1 定义问题，收集数据集"></a>1 定义问题，收集数据集</h2><p>首先定义所面对的问题：</p>
+<ul>
+<li><p>输入输出：输入数据是什么？需要预测什么？</p>
+</li>
+<li><p>问题类型：面对的是什么类型的问题？比如二分类、多分类、标量回归、向量回归、等等，确定问题类型有助于选择模型架构、损失函数等</p>
+</li>
+</ul>
+<p>注意这一阶段的工作基于基本假设：</p>
+<a id="more"></a>
+
+<ul>
+<li><p>假设输出是可以根据输入进行预测的</p>
+</li>
+<li><p>假设可用数据包含足够多的信息，足以学习输入和输出之间的关系</p>
+</li>
+</ul>
+<p>机器学习只能用来记忆训练数据中存在的模式，即只能识别出曾经见过的东西，这里存在的假设就是未来的规律与过去相同，但事实往往并非如此</p>
+<h2 id="2-选择衡量成功的指标"><a href="#2-选择衡量成功的指标" class="headerlink" title="2 选择衡量成功的指标"></a>2 选择衡量成功的指标</h2><p>比如精度、准确率、召回率等等，衡量成功的指标将指引你选择损失函数，即模型要优化什么</p>
+<h2 id="3-确定评估方法"><a href="#3-确定评估方法" class="headerlink" title="3 确定评估方法"></a>3 确定评估方法</h2><p>即如何衡量当前的进展，也就是验证集的确定方式，通常有三种方法：</p>
+<ul>
+<li>直接留出验证集：数据量很大时可以采用这种方法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 留出验证集</span></span><br><span class="line">num_validation_samples = <span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打乱数据</span></span><br><span class="line">np.random.shuffle(data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 划分数据集</span></span><br><span class="line">validation_data = data[:num_validation_samples]</span><br><span class="line">train_data = data[num_validation_samples:]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>K折交叉验证：如果验证集太小，无法保证可靠性，可以选择这种方法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># K折交叉验证</span></span><br><span class="line">k = <span class="number">4</span></span><br><span class="line">num_validation_samples = len(data) // k</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打乱数据</span></span><br><span class="line">np.random.shuffle(data)</span><br><span class="line"></span><br><span class="line">validation_scores = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> fold <span class="keyword">in</span> range(k):</span><br><span class="line">    <span class="comment"># 划分数据集</span></span><br><span class="line">    validation_data = data[num_validation_samples * fold:num_validation_samples * (fold + <span class="number">1</span>)]</span><br><span class="line">    train_data = data[:num_validation_samples * fold] + data[num_validation_samples * (fold + <span class="number">1</span>):]</span><br><span class="line"></span><br><span class="line">    model = get_model()</span><br><span class="line">    model.train(train_data)</span><br><span class="line">    validation_score = model.evaluate(validation_data)</span><br><span class="line">    validation_scores.append(validation_score)</span><br><span class="line"></span><br><span class="line">validation_score = np.average(validation_scores)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重复的K折验证：如果可用的数据很少，为了保证评估的准确性，应该采用此法（具体做法：多次使用K折验证，每次划分数据之前都先将数据打乱，最终分数是每次K折验证分数的平均值）</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li><p>将数据划分为训练集和测试集之前，通常应该随机打乱数据，以保证数据的代表性</p>
+</li>
+<li><p>如果是要根据过去预测未来，即数据带有时间属性，那么在划分数据前不应该随机打乱数据，这种情况下应确保测试集中所有数据的时间都晚于训练集</p>
+</li>
+<li><p>确保训练集和验证集之间没有交集，避免出现数据冗余，即避免在部分训练数据上评估模型</p>
+</li>
+</ul>
+<h2 id="4-准备数据"><a href="#4-准备数据" class="headerlink" title="4 准备数据"></a>4 准备数据</h2><ul>
+<li>向量化：如果模型是深度神经网络，需要先将数据格式化为张量，神经网络的所有输入和目标都必须是浮点数张量（特定情况下可以是整数张量），张量的取值通常应该缩放为较小的值，比如[-1,1]或者[0,1]区间</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># one-hot编码实现数据向量化，将整数序列变换为二进制矩阵</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">vectorize_sequences</span><span class="params">(sequences, dimension=<span class="number">10000</span>)</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 创建一个形状为(len(sequences), dimension)的零矩阵</span></span><br><span class="line">    results = np.zeros((len(sequences), dimension))</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 将results[i]的指定索引的数字设为1</span></span><br><span class="line">    <span class="keyword">for</span> i, sequence <span class="keyword">in</span> enumerate(sequences):</span><br><span class="line">        results[i, sequence] = <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> results</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据向量化，转换成0和1组成的向量</span></span><br><span class="line">x_train = vectorize_sequences(train_data)</span><br><span class="line">x_test = vectorize_sequences(test_data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># one-hot编码将标签向量化</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">to_one_hot</span><span class="params">(labels, dimension=<span class="number">46</span>)</span>:</span></span><br><span class="line">    results = np.zeros((len(labels), dimension))</span><br><span class="line">    <span class="keyword">for</span> i, label <span class="keyword">in</span> enumerate(labels):</span><br><span class="line">        results[i, label] = <span class="number">1.</span></span><br><span class="line">    <span class="keyword">return</span> results</span><br><span class="line"></span><br><span class="line">one_hot_train_labels = to_one_hot(train_labels)</span><br><span class="line">one_hot_test_labels = to_one_hot(test_labels)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Keras内置方法可以实现这个操作</span></span><br><span class="line"><span class="keyword">from</span> keras.utils.np_utils <span class="keyword">import</span> to_categorical</span><br><span class="line"></span><br><span class="line">one_hot_train_labels = to_categorical(train_labels)</span><br><span class="line">one_hot_test_labels = to_categorical(test_labels)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>标准化：如果不同的特征具有不同的取值范围（异质数据），应该对每个特征做数据标准化，即减去特征平均值，再除以标准差，这样得到的特征平均值为0，标准差为1（注意，用于测试集标准化的均值和标准差都是在训练集上计算得到的，不能使用测试集的数据计算得到任何结果）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据标准化</span></span><br><span class="line"><span class="comment"># axis=0表示纵轴方向，axis=1表示横轴方向，不填表示全部元素</span></span><br><span class="line">mean = train_data.mean(axis=<span class="number">0</span>)</span><br><span class="line">train_data -= mean</span><br><span class="line">std = train_data.std(axis=<span class="number">0</span>)</span><br><span class="line">train_data /= std</span><br><span class="line"></span><br><span class="line">test_data -= mean</span><br><span class="line">test_data /= std</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">train_stats = train_dataset.describe()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义一个函数来专门实现标准化，这样比较方便</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">norm</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (x - train_stats[<span class="string">'mean'</span>]) / train_stats[<span class="string">'std'</span>]</span><br><span class="line"></span><br><span class="line">normed_train_data = norm(train_dataset)</span><br><span class="line">normed_test_data = norm(test_dataset)    <span class="comment"># 将测试集放入与训练集相同的分布中</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>处理缺失值：一般来说，对于神经网络，将缺失值设置为0是安全的，只要0不是一个有意义的值；注意，如果测试集中有缺失值，训练集中没有，网络无法学会忽略缺失值，这种情况下应该人为生成一些有缺失项的训练数据</p>
+</li>
+<li><p>特征工程：本质是用更简单的方式表述问题，使问题变得更容易；虽然神经网络能够从原始数据中自动提取有用的特征，但这并不意味着不需要特征工程，因为良好的特征仍然可以让你用更少的资源、更少的数据解决问题，对于小数据集更加重要</p>
+</li>
+</ul>
+<h2 id="5-开发比基准更好的模型"><a href="#5-开发比基准更好的模型" class="headerlink" title="5 开发比基准更好的模型"></a>5 开发比基准更好的模型</h2><p>这一阶段的目标是获得统计功效，即开发一个小型模型，它能够打败纯随机的基准</p>
+<p>三个关键参数：</p>
+<ul>
+<li><p>最后一层的激活函数：对网络输出进行有效的限制</p>
+</li>
+<li><p>损失函数：相当于目标函数，在训练过程中需要将其最小化</p>
+</li>
+<li><p>优化器：决定如何基于损失函数对网络进行更新</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">问题类型</th>
+<th align="center">最后一层激活</th>
+<th align="center">损失函数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">二分类</td>
+<td align="center">sigmoid</td>
+<td align="center">binary_crossentropy</td>
+</tr>
+<tr>
+<td align="center">多分类、单标签</td>
+<td align="center">softmax</td>
+<td align="center">categorical_crossentropy</td>
+</tr>
+<tr>
+<td align="center">多分类、多标签</td>
+<td align="center">sigmoid</td>
+<td align="center">binary_crossentropy</td>
+</tr>
+<tr>
+<td align="center">回归到任意值</td>
+<td align="center">无</td>
+<td align="center">mse</td>
+</tr>
+<tr>
+<td align="center">回归到0~1范围内的值</td>
+<td align="center">sigmoid</td>
+<td align="center">mse或binary_crossentropy</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以回归问题为例演示建模过程</span></span><br><span class="line"><span class="keyword">from</span> tensorflow.keras <span class="keyword">import</span> models</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras <span class="keyword">import</span> layers</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_model</span><span class="params">()</span>:</span></span><br><span class="line">    model = models.Sequential()</span><br><span class="line">    model.add(layers.Dense(<span class="number">64</span>, activation=<span class="string">'relu'</span>, input_shape=(train_data.shape[<span class="number">1</span>],)))</span><br><span class="line">    model.add(layers.Dense(<span class="number">64</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.Dense(<span class="number">1</span>))</span><br><span class="line">    model.compile(optimizer=<span class="string">'rmsprop'</span>, loss=<span class="string">'mse'</span>, metrics=[<span class="string">'mae'</span>])</span><br><span class="line">    <span class="keyword">return</span> model</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-扩大模型规模，开发过拟合的模型"><a href="#6-扩大模型规模，开发过拟合的模型" class="headerlink" title="6 扩大模型规模，开发过拟合的模型"></a>6 扩大模型规模，开发过拟合的模型</h2><p>机器学习中无处不在的对立是优化和泛化的对立，理想的模型是刚好在欠拟合和过拟合的界线上，在容量不足和容量过大的界线上，为了找到这条界线，必须穿过它，也就是必须开发一个过拟合的模型，主要方法：</p>
+<ul>
+<li><p>添加更多的层</p>
+</li>
+<li><p>让每一层变得更大</p>
+</li>
+<li><p>训练更多的轮次</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 训练模型，并在history中记录训练和验证的准确性，compile中的metrics内容将被记录</span></span><br><span class="line">history = model.fit(partial_x_train,</span><br><span class="line">                    partial_y_train,</span><br><span class="line">                    epochs=<span class="number">20</span>,</span><br><span class="line">                    batch_size=<span class="number">512</span>,</span><br><span class="line">                    validation_data=(x_val, y_val))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将history中的数据可视化</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_history</span><span class="params">(history)</span>:</span></span><br><span class="line">    hist = pd.DataFrame(history.history)</span><br><span class="line">    hist[<span class="string">'epoch'</span>] = history.epoch</span><br><span class="line"></span><br><span class="line">    plt.figure()</span><br><span class="line">    plt.xlabel(<span class="string">'Epoch'</span>)</span><br><span class="line">    plt.ylabel(<span class="string">'Mean Abs Error [MPG]'</span>)</span><br><span class="line">    plt.plot(hist[<span class="string">'epoch'</span>], hist[<span class="string">'mae'</span>], label=<span class="string">'Train Error'</span>)</span><br><span class="line">    plt.plot(hist[<span class="string">'epoch'</span>], hist[<span class="string">'val_mae'</span>], label = <span class="string">'Val Error'</span>)</span><br><span class="line">    plt.ylim([<span class="number">0</span>,<span class="number">5</span>])</span><br><span class="line">    plt.legend()</span><br><span class="line"></span><br><span class="line">    plt.figure()</span><br><span class="line">    plt.xlabel(<span class="string">'Epoch'</span>)</span><br><span class="line">    plt.ylabel(<span class="string">'Mean Square Error [$MPG^2$]'</span>)</span><br><span class="line">    plt.plot(hist[<span class="string">'epoch'</span>], hist[<span class="string">'mse'</span>], label=<span class="string">'Train Error'</span>)</span><br><span class="line">    plt.plot(hist[<span class="string">'epoch'</span>], hist[<span class="string">'val_mse'</span>], label = <span class="string">'Val Error'</span>)</span><br><span class="line">    plt.ylim([<span class="number">0</span>,<span class="number">20</span>])</span><br><span class="line">    plt.legend()</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">plot_history(history)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可视化的另一种操作</span></span><br><span class="line">history_dict = history.history</span><br><span class="line">loss_values = history_dict[<span class="string">'loss'</span>]</span><br><span class="line">val_loss_values = history_dict[<span class="string">'val_loss'</span>]</span><br><span class="line"></span><br><span class="line">epochs = range(<span class="number">1</span>, len(loss_values)+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">plt.plot(epochs, loss_values, <span class="string">'bo'</span>, label=<span class="string">'Training loss'</span>)</span><br><span class="line">plt.plot(epochs, val_loss_values, <span class="string">'b'</span>, label=<span class="string">'Validation loss'</span>)</span><br><span class="line">plt.title(<span class="string">'Training and Validation loss'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Epochs'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Loss'</span>)</span><br><span class="line">plt.legend()</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-模型正则化与调节超参数"><a href="#7-模型正则化与调节超参数" class="headerlink" title="7 模型正则化与调节超参数"></a>7 模型正则化与调节超参数</h2><p>不断地调节模型、训练、在验证集上评估，并重复这一过程，主要尝试手段：</p>
+<ul>
+<li>添加dropout：神经网络最有效也最常用的正则化方法之一，核心思想是在层的输出值中引入噪声，打破不显著的偶然模式，如果没有噪声的话，网络会记住这些偶然模式；具体效果是在训练过程中随机将该层的一些输出特征舍弃（置为0）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引入dropout，应用于前面一层的输出</span></span><br><span class="line">model.add(layers.Dropout(<span class="number">0.5</span>))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>尝试不同的架构：增加或减少层数</p>
+</li>
+<li><p>添加L1/L2正则化</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 向模型添加L2权重正则化</span></span><br><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> regularizers</span><br><span class="line"></span><br><span class="line">model = models.Sequential()</span><br><span class="line">model.add(layers.Dense(<span class="number">16</span>, kernel_regularizer=regularizers.l2(<span class="number">0.001</span>),activation=<span class="string">'relu'</span>, input_shape=(<span class="number">10000</span>,)))</span><br><span class="line">model.add(layers.Dense(<span class="number">16</span>, kernel_regularizer=regularizers.l2(<span class="number">0.001</span>),activation=<span class="string">'relu'</span>))</span><br><span class="line">model.add(layers.Dense(<span class="number">1</span>, activation=<span class="string">'sigmoid'</span>))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>尝试不同的超参数</p>
+</li>
+<li><p>反复做特征工程，添加新特征或删除没有信息量的旧特征</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/21/机器学习和深度学习的通用工作流程/" data-id="ck20i7n6q000a9cv0st7l7jdp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/12/MySQL学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MySQL学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter/">Jupyter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/">Kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pandas/">Pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学建模/">数学建模</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Deep-Learning/" style="font-size: 10px;">Deep Learning</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jupyter/" style="font-size: 10px;">Jupyter</a> <a href="/tags/Kaggle/" style="font-size: 13.33px;">Kaggle</a> <a href="/tags/Machine-Learning/" style="font-size: 16.67px;">Machine Learning</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Pandas/" style="font-size: 10px;">Pandas</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/Spring/" style="font-size: 16.67px;">Spring</a> <a href="/tags/数学建模/" style="font-size: 10px;">数学建模</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/21/机器学习和深度学习的通用工作流程/">机器学习和深度学习的通用工作流程</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/12/MySQL学习笔记/">MySQL学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/25/数学建模竞赛总结/">数学建模竞赛总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/01/机器学习过程中面临的主要问题/">机器学习过程中面临的主要问题</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/21/Spring学习笔记：AOP/">Spring学习笔记：AOP</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 YQ<br>
+      youqi9333@outlook.com<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
