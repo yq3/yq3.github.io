@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>学生管理系统开发总结 | YQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="注：学生管理系统 SMS 是自己用来对 Java + Java Swing + JDBC + MySQL 进行练手的项目。源码在此  今天是2020年2月的最后一天，疫情尚未结束，开学仍未有期。 宅在家已经一个多月。1月底到2月初，花了大概两个多星期的时间，把之前的数据集用 Keras 搭建的神经网络做了一下回归预测，笔记本跑数据太吃力，一天也跑不了几次，在得到一个相对还能接受的结果之后就不跑了，">
+<meta name="keywords" content="Java,Java Swing,JDBC,MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学生管理系统开发总结">
+<meta property="og:url" content="http://yoursite.com/2020/02/29/学生管理系统开发总结/index.html">
+<meta property="og:site_name" content="YQ">
+<meta property="og:description" content="注：学生管理系统 SMS 是自己用来对 Java + Java Swing + JDBC + MySQL 进行练手的项目。源码在此  今天是2020年2月的最后一天，疫情尚未结束，开学仍未有期。 宅在家已经一个多月。1月底到2月初，花了大概两个多星期的时间，把之前的数据集用 Keras 搭建的神经网络做了一下回归预测，笔记本跑数据太吃力，一天也跑不了几次，在得到一个相对还能接受的结果之后就不跑了，">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2020/02/29/学生管理系统开发总结/1.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/29/学生管理系统开发总结/2.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/29/学生管理系统开发总结/3.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/29/学生管理系统开发总结/4.png">
+<meta property="og:updated_time" content="2020-02-29T07:31:30.923Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学生管理系统开发总结">
+<meta name="twitter:description" content="注：学生管理系统 SMS 是自己用来对 Java + Java Swing + JDBC + MySQL 进行练手的项目。源码在此  今天是2020年2月的最后一天，疫情尚未结束，开学仍未有期。 宅在家已经一个多月。1月底到2月初，花了大概两个多星期的时间，把之前的数据集用 Keras 搭建的神经网络做了一下回归预测，笔记本跑数据太吃力，一天也跑不了几次，在得到一个相对还能接受的结果之后就不跑了，">
+<meta name="twitter:image" content="http://yoursite.com/2020/02/29/学生管理系统开发总结/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="YQ" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">YQ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">My Hexo Blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-学生管理系统开发总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/29/学生管理系统开发总结/" class="article-date">
+  <time datetime="2020-02-28T16:00:00.000Z" itemprop="datePublished">2020-02-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学生管理系统开发总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>注：学生管理系统 SMS 是自己用来对 Java + Java Swing + JDBC + MySQL 进行练手的项目。<a href="https://github.com/yq3/SMS" target="_blank" rel="noopener">源码在此</a></p>
+<hr>
+<p>今天是2020年2月的最后一天，疫情尚未结束，开学仍未有期。</p>
+<p>宅在家已经一个多月。1月底到2月初，花了大概两个多星期的时间，把之前的数据集用 Keras 搭建的神经网络做了一下回归预测，笔记本跑数据太吃力，一天也跑不了几次，在得到一个相对还能接受的结果之后就不跑了，太费劲了。神经网络这个东西真的是一言难尽，每次结果都不一样这个特性是把双刃剑，你不知道下一次是更好还是更坏，很抓狂。当然我的原始数据集是有一点问题的，以后看看能不能再深入研究一下。</p>
+<p>2月中旬开始，学习了 JDBC 的相关知识，同时把 MySQL 和 Java Swing 复习了一下，开始找项目练手。搜索了一圈发现学生管理系统似乎是一个新手任务。好吧，咱也不能免俗，就搞它了。虽有借鉴，但都是自己敲出来的，源码已上传到 <a href="https://github.com/yq3/SMS" target="_blank" rel="noopener">GitHub</a> 上。下面对过程中遇到的问题和一些想法做一下总结。</p>
+<a id="more"></a>
+
+<ol>
+<li><p>程序的主要功能界面：登录与注册界面、学生界面、教师界面、管理员界面。不同身份的人登陆进去，所能使用的功能模块是有区别的，比如学生登录进去只能看到自己的信息和成绩，而无法进行信息和成绩的编辑操作（那是教师的功能），也无法进行用户信息的编辑（那是管理员的功能）。</p>
+</li>
+<li><p>程序的逻辑：首先由管理员把本校师生的信息录入用户表（对应 MySQL 数据库中的 user 表），然后师生要使用自己的用户名注册，只有在管理员的用户表中的人才可以进行注册。教师登录后可以对学生信息表（对应 MySQL 数据库中的 info 表）和学生成绩表（对应 MySQL 数据库中的 score 表）进行增删改查的操作。学生登录后只能看到属于自己的信息和成绩。</p>
+</li>
+<li><p>程序编写的架构主要分为：JDBC 层，负责创建与数据库的连接以及资源的关闭；Bean 层，对应 MySQL 数据库中的3张表；DAO 层，负责与数据库之间的具体操作；Service 层，封装了与数据库之间的各项操作；以及 UI 层，是用 Java Swing 开发的界面。<strong>尽管转移了部分逻辑代码到 Service 层，但是 UI 层中依然包含有大量业务逻辑的代码，这一点做得不够好，以后要注意。</strong></p>
+</li>
+<li><p>程序的用户界面比较简单，Java Swing 的原生界面有点不忍直视，采用了系统的 LookAndFeel 之后好了很多。界面的数据呈现是用的 JTable，这个组件还是有很大的改进空间的，可以对它渲染的很好看。不同的 JFrame 进行切换，可以用  <code>oldFrame.setVisible(false);</code> 使前一个隐去。而同一个 JFrame 中要切换不同的 JPanel，可以用 <code>frame.setContentPane(newPanel);</code> 然后再加上 <code>frame.revalidate();</code> 即可，不要用 add，因为 add 是在现有基础上添加，而 setContentPane 是将现有的 panel 改为新 panel，可以实现切换的效果。</p>
+</li>
+<li><p>对于一些基础的 Java 知识点需要梳理整合一下，避免每次用到都要重新百度。比如 String Integer char 等数据类型的相互间的转换，还有一些特殊的数据类型比如 Date，“yyyy年MM月dd日” 如何转换成 yyyy-MM-dd 格式。</p>
+</li>
+<li><p>MySQL 中的3张表是各自建的，表间没有建立关联，即可能会出现这样一个 bug：同一用户名（学号）在信息表和成绩表中会对应不同的学生姓名。</p>
+</li>
+<li><p>在添加学生生日信息的时候，使用了 <a href="https://github.com/LGoodDatePicker/LGoodDatePicker" target="_blank" rel="noopener">LGoodDatePicker</a> 控件，在此表示感谢。</p>
+</li>
+</ol>
+<hr>
+<p>下面放一些程序界面的截图。</p>
+<ol>
+<li>登录和注册界面</li>
+</ol>
+<img src="/2020/02/29/学生管理系统开发总结/1.png" title="This is an example image">
+
+<ol start="2">
+<li>学生的成绩查询界面</li>
+</ol>
+<img src="/2020/02/29/学生管理系统开发总结/2.png" title="This is an example image">
+
+<ol start="3">
+<li>教师的学生信息编辑界面</li>
+</ol>
+<img src="/2020/02/29/学生管理系统开发总结/3.png" title="This is an example image">
+
+<ol start="4">
+<li>管理员的用户信息编辑界面</li>
+</ol>
+<img src="/2020/02/29/学生管理系统开发总结/4.png" title="This is an example image">
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/02/29/学生管理系统开发总结/" data-id="ck778n5j300058wv0tr54k0az" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/">JDBC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-Swing/">Java Swing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/21/JDBC学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JDBC学习笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲聊/">闲聊</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-Swing/">Java Swing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter/">Jupyter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/">Kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pandas/">Pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学建模/">数学建模</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Deep-Learning/" style="font-size: 10px;">Deep Learning</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 13.33px;">JDBC</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java-Swing/" style="font-size: 10px;">Java Swing</a> <a href="/tags/Jupyter/" style="font-size: 10px;">Jupyter</a> <a href="/tags/Kaggle/" style="font-size: 13.33px;">Kaggle</a> <a href="/tags/Machine-Learning/" style="font-size: 16.67px;">Machine Learning</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/Pandas/" style="font-size: 10px;">Pandas</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/Spring/" style="font-size: 16.67px;">Spring</a> <a href="/tags/数学建模/" style="font-size: 10px;">数学建模</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/02/29/学生管理系统开发总结/">学生管理系统开发总结</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/21/JDBC学习笔记/">JDBC学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/21/机器学习和深度学习的通用工作流程/">机器学习和深度学习的通用工作流程</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/12/MySQL学习笔记/">MySQL学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/25/数学建模竞赛总结/">数学建模竞赛总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 YQ<br>
+      youqi9333@outlook.com<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
